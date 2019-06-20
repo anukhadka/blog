@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+{% block content %}
+        <header id="header">
+    <div class="container main-menu">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+                <a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" title=""/></a>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li><a href="{% url 'portfolio_app:index' %}">Home</a></li>
+                    <li><a href="{% url 'portfolio_app:about' %}">About</a></li>
+                    <li><a href="{% url 'portfolio_app:services' %}">Services</a></li>
+                    <li><a href="{% url 'portfolio_app:portfolio' %}">Portfolio</a></li>
+                    <li class="menu-has-children"><a href="">Blog</a>
+                    <ul>
+                         <li><a href="{% url 'portfolio_app:blogs' %}">Blog Home</a></li>
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'portfolio_app:addblog' %}">Add Blog</a></li>
+                    {% endif %}
+
+                        
+                    </li>
+                    <li><a href="{% url 'portfolio_app:contact' %}">Contact</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+</header><!-- #header -->
+{% endblock %}

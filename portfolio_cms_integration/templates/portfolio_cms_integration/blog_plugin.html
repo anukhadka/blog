@@ -1,0 +1,17 @@
+<h1>{{ instance.blog.title }}</h1>
+
+<form action="{% url 'portfolio_app:blog_detail' instance.blog.id %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {% for choice in instance.blog.choice_set.all %}
+            <div class="radio">
+                <label>
+                    <input type="radio" name="choice" value="{{ choice.id }}">
+                    {{ choice.choice_text }}
+                </label>
+                
+            </div>
+        {% endfor %}
+    </div>
+    <input type="submit" value="add blog" />
+</form>
