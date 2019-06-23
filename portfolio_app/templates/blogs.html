@@ -95,7 +95,7 @@
                             <p class="excert">
                                 {{ b.content|truncatechars:50}}
                             </p>
-                            <a href="{% url 'blog_detail' b.pk %}" class="primary-btn">View More</a>
+                            <a href="{% url 'portfolio_app:blog_detail' b.pk %}" class="primary-btn">View More</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -158,7 +158,7 @@
                                         <img class="img-fluid" src="{{b.image.url}}" alt="" style="width:100px;height:60px;">
                                     </div>
                                     <div class="details">
-                                        <a href="{% url 'blog_detail' b.pk %}"><h6>{{b.title}}</h6></a>
+                                        <a href="{% url 'portfolio_app:blog_detail' b.pk %}"><h6>{{b.title}}</h6></a>
                                         <p>02 Hours ago</p>
                                     </div>
                                     

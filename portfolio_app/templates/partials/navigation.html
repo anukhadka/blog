@@ -14,10 +14,10 @@
                     <li><a href="{% url 'portfolio_app:about' %}">About</a></li>
                     <li><a href="{% url 'portfolio_app:services' %}">Services</a></li>
                     <li><a href="{% url 'portfolio_app:portfolio' %}">Portfolio</a></li>
-                    <li class="menu-has-children"><a href="">Blog</a>
+                    <li class="menu-has-children"><a href="{% url 'portfolio_app:blogs' %}">Blog</a>
                     <ul>
                          <li><a href="{% url 'portfolio_app:blogs' %}">Blog Home</a></li>
-                    </ul>
+                    </ul>   
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'portfolio_app:addblog' %}">Add Blog</a></li>
                     {% endif %}
